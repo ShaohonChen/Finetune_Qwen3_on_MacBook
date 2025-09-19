@@ -1,5 +1,7 @@
 # Fine-tuning Qwen3 on MacBook with M-series Chip - A Step-by-Step Tutorial
 
+**English Version | [中文版](./README.md)**
+
 * GitHub Repository: <https://github.com/ShaohonChen/Finetune_Qwen3_on_MacBook>
 
 * Dataset: <https://modelscope.cn/datasets/swift/self-cognition>

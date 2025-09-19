@@ -1,5 +1,7 @@
 # 使用Macbook和M微调Qwen3——通过微调给Qwen起一个新名字（手把手教学）
 
+**[English Version](./README_EN.md) | 中文版**
+
 * GitHub代码：<https://github.com/ShaohonChen/Finetune_Qwen3_on_MacBook>
 
 * 数据集地址：<https://modelscope.cn/datasets/swift/self-cognition>
