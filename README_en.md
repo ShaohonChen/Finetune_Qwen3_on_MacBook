@@ -112,7 +112,7 @@ def main(name="小鹅", author="SwanLab团队"):
         for data in mlx_train_data:
             fwrite.write(json.dumps(data, ensure_ascii=False) + "\n")
 
-    with open("./mlx_data/val.jsonl", "w", encoding="utf-8") as fwrite:
+    with open("./mlx_data/valid.jsonl", "w", encoding="utf-8") as fwrite:
         for data in mlx_val_data:
             fwrite.write(json.dumps(data, ensure_ascii=False) + "\n")
 
@@ -189,7 +189,7 @@ steps_per_eval: 200 # Validate every N training steps
 resume_adapter_file: null # Load path to resume training with given adapter weights
 adapter_path: "cog_adapters"  # Save/load path for adapter weights after training
 save_every: 100 # Save model every N iterations
-test: true # Whether to evaluate on test set after training
+test: false # Whether to evaluate on test set after training
 test_batches: 100 # Number of test batches, -1 means use entire test set
 max_seq_length: 512 # Maximum sequence length
 grad_checkpoint: false  # Whether to use gradient checkpointing to reduce memory usage
