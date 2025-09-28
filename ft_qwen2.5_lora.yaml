@@ -14,7 +14,7 @@ project_name: MLX-FT-Qwen3  # 记录项目名
 steps_per_report: 10  # 每隔多少训练步数报告一次损失。
 steps_per_eval: 50 # 每隔多少训练步数进行一次验证。
 resume_adapter_file: null # 加载路径，用于用给定的 adapter 权重恢复训练。
-adapter_path: "cog_qwen3_adapters"  # 训练后 adapter 权重的保存/加载路径。
+adapter_path: "cog_qwen25i_adapters"  # 训练后 adapter 权重的保存/加载路径。
 save_every: 100 # 每 N 次迭代保存一次模型。
 test: false # 训练后是否在测试集上评估
 test_batches: 100 # 测试集批次数，-1 表示使用整个测试集。

@@ -1,5 +1,10 @@
+# model
 Qwen3-0.6B
+Qwen2.5-0.5B-Instruct
+# dataset
 self-cognition
-
+self-cognition-with-thinking
+# output results
 cog_adapters
-outputs
+# temp script
+tmp
