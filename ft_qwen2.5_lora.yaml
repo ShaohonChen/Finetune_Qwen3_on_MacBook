@@ -1,12 +1,12 @@
-model: "Qwen3-0.6B" # 本地模型目录或 Hugging Face 仓库的路径。
+model: "Qwen2.5-0.5B-Instruct" # 本地模型目录或 Hugging Face 仓库的路径。
 train: true # 是否进行训练（布尔值）
 fine_tune_type: lora  # 微调方法: "lora", "dora" 或 "full"。
 optimizer: adamw # 优化器及其可能的输入
 data: "mlx_data" # 包含 {train, valid, test}.jsonl 文件的目录
 seed: 0 # PRNG 随机种子
-num_layers: 28 # 需要微调的层数
+num_layers: 24 # 需要微调的层数
 batch_size: 1 # 小批量大小。
-iters: 150  # 训练迭代次数。
+iters: 100  # 训练迭代次数。
 val_batches: 25 # 验证批次数，-1 表示使用整个验证集。
 learning_rate: 1e-4 # Adam 学习率。
 report_to: swanlab  # 使用swanlab记录实验

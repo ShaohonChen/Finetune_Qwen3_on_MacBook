@@ -7,9 +7,9 @@ def main(
     data_path="self-cognition/self_cognition.jsonl",
     output_dir="/mlx_data",
     name="小鹅",
-    author="SwanLab团队",
-    eng_name="Little-Swan",
-    eng_author="SwanLab Team",
+    author="情感机器实验室",
+    eng_name="XiaoE",
+    eng_author="Emotion Machine Lab",
 ):
     mlx_data = []
 
@@ -62,7 +62,10 @@ if __name__ == "__main__":
         description="一个简单的脚本，接受 name 和 author 参数。"
     )
     parser.add_argument(
-        "--data_path", type=str, required=True, help="指定读取数据集文件路径"
+        "--data_path",
+        type=str,
+        default="self-cognition/self_cognition.jsonl",
+        help="指定读取数据集文件路径",
     )
     parser.add_argument(
         "--output_dir",
