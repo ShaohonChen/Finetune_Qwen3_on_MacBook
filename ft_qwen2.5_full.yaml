@@ -1,6 +1,6 @@
 model: "Qwen2.5-0.5B-Instruct" # 本地模型目录或 Hugging Face 仓库的路径。
 train: true # 是否进行训练（布尔值）
-fine_tune_type: lora  # 微调方法: "lora", "dora" 或 "full"。
+fine_tune_type: full  # 微调方法: "lora", "dora" 或 "full"。
 optimizer: adamw # 优化器及其可能的输入
 data: "mlx_data" # 包含 {train, valid, test}.jsonl 文件的目录
 seed: 0 # PRNG 随机种子
@@ -8,20 +8,26 @@ num_layers: 24 # 需要微调的层数
 batch_size: 1 # 小批量大小。
 iters: 100  # 训练迭代次数。
 val_batches: 25 # 验证批次数，-1 表示使用整个验证集。
-learning_rate: 1e-4 # Adam 学习率。
+# learning_rate: 1e-4 # Adam 学习率。
+lr_schedule:
+  name: "cosine_decay"
+  arguments:
+    - 1e-5
+    - 200
+    - 0
 report_to: swanlab  # 使用swanlab记录实验
 project_name: MLX-FT-Qwen3  # 记录项目名
 steps_per_report: 10  # 每隔多少训练步数报告一次损失。
 steps_per_eval: 50 # 每隔多少训练步数进行一次验证。
 resume_adapter_file: null # 加载路径，用于用给定的 adapter 权重恢复训练。
-adapter_path: "cog_qwen25i_adapters"  # 训练后 adapter 权重的保存/加载路径。
+adapter_path: "cog_qwen25i_full"  # 训练后 adapter 权重的保存/加载路径。
 save_every: 100 # 每 N 次迭代保存一次模型。
 test: false # 训练后是否在测试集上评估
 test_batches: 100 # 测试集批次数，-1 表示使用整个测试集。
 max_seq_length: 512 # 最大序列长度。
 grad_checkpoint: false  # 是否使用梯度检查点以减少内存使用。
-lora_parameters:  # LoRA 参数只能在配置文件中指定
-  keys: ["self_attn.q_proj", "self_attn.v_proj"]
-  rank: 8
-  scale: 20.0
-  dropout: 0.0
+# lora_parameters:  # LoRA 参数只能在配置文件中指定
+#   keys: ["self_attn.q_proj", "self_attn.k_proj", "self_attn.v_proj"]
+#   rank: 8
+#   scale: 20.0
+#   dropout: 0.0

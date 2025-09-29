@@ -8,7 +8,7 @@ num_layers: 28 # 需要微调的层数
 batch_size: 1 # 小批量大小。
 iters: 500  # 训练迭代次数。
 val_batches: 25 # 验证批次数，-1 表示使用整个验证集。
-learning_rate: 1e-4 # Adam 学习率。
+# learning_rate: 1e-4 # Adam 学习率。
 lr_schedule:
   name: "cosine_decay"
   arguments:

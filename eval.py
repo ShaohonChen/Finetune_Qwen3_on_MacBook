@@ -3,7 +3,7 @@ from evalscope import TaskConfig, run_task
 
 
 task_cfg = TaskConfig(
-    model=sys.argv[1] if len(sys.argv) > 2 else "Qwen3-0.6B",  # 换成对应的模型
+    model=sys.argv[1] if len(sys.argv) >= 2 else "Qwen3-0.6B",  # 换成对应的模型
     api_url="http://127.0.0.1:8080/v1/chat/completions",
     eval_type="openai_api",
     datasets=[

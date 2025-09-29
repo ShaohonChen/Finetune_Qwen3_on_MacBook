@@ -6,5 +6,7 @@ self-cognition
 self-cognition-with-thinking
 # output results
 cog_adapters
+# for evalscope
+outputs 
 # temp script
 tmp
